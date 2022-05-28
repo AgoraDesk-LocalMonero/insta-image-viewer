@@ -34,8 +34,11 @@ class InstaImageViewer extends StatelessWidget {
               opaque: false,
               transitionDuration: _kRouteDuration,
               reverseTransitionDuration: _kRouteDuration,
-              barrierColor: backgroundIsTransparent ? Colors.white.withOpacity(0) : backgroundColor,
-              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              barrierColor: backgroundIsTransparent
+                  ? Colors.white.withOpacity(0)
+                  : backgroundColor,
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
                 final tween = Tween(begin: 0.0, end: 1.0);
                 final fadeAnimation = animation.drive(tween);
                 return FadeTransition(
@@ -124,7 +127,9 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
   }
 
   setOpacity() {
-    final double tmp = _positionYDelta < 0 ? 1 - ((_positionYDelta / 1000) * -1) : 1 - (_positionYDelta / 1000);
+    final double tmp = _positionYDelta < 0
+        ? 1 - ((_positionYDelta / 1000) * -1)
+        : 1 - (_positionYDelta / 1000);
     if (kDebugMode) {
       print(tmp);
     }
@@ -161,7 +166,9 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
   Widget build(BuildContext context) {
     final horizontalPosition = 0 + max(_positionYDelta, -_positionYDelta) / 15;
     return Scaffold(
-      backgroundColor: widget.backgroundIsTransparent ? Colors.transparent : widget.backgroundColor,
+      backgroundColor: widget.backgroundIsTransparent
+          ? Colors.transparent
+          : widget.backgroundColor,
       body: GestureDetector(
         onVerticalDragStart: (details) => _startVerticalDrag(details),
         onVerticalDragUpdate: (details) => _whileVerticalDrag(details),

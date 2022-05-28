@@ -43,7 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 140,
               child: InstaImageViewer(
                 child: Image(
-                  image: Image.network("https://picsum.photos/id/429/1080/1920").image,
+                  image: Image.network("https://picsum.photos/id/429/1080/1920")
+                      .image,
                 ),
               ),
             ),
@@ -53,7 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 140,
               child: InstaImageViewer(
                 child: Image(
-                  image: Image.network("https://picsum.photos/id/507/1000").image,
+                  image:
+                      Image.network("https://picsum.photos/id/507/1000").image,
                 ),
               ),
             ),
