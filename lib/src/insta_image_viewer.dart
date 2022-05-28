@@ -16,9 +16,18 @@ class InstaImageViewer extends StatelessWidget {
     this.disposeLevel,
   }) : super(key: key);
 
+  /// Image widget
+  /// For example Image(image:Image.network("https://picsum.photos/id/507/1000").image,)
   final Widget child;
+
+  /// Background in the full screen mode, Colors.black by default
   final Color backgroundColor;
+
+  /// Make background transparent
   final bool backgroundIsTransparent;
+
+  /// After what level of drag from top image should be dismissed
+  /// high - 300px, middle - 200px, low - 100px
   final DisposeLevel? disposeLevel;
 
   @override
