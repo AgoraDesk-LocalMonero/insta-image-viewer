@@ -28,8 +28,8 @@ SizedBox(
 ```
 
 TODO:
-* Upon request: Possibility to wrap icons with path to big images. According current UI there is no
-need in in such functionality. But in long lists it will lead to significant UI slow.
+* Upon request: Possibility to wrap icons with path to large images. According current UI there is no
+need in in such functionality. But, in a long lists, it will lead to significant UI slowing down.
 So, if you need this functionality feel free to create an issue.
 * Improve animations
 
