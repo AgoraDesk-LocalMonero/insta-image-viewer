@@ -7,13 +7,13 @@ A simple widget to display image in a full-screen, swipe it to dismiss, pinch & 
 ## Features
 
 * Show a single image in a full screen mode
-* Use pinch & zoom to zoom in and out of images
+* Nice swipe animation (like in Instagram) to dismiss full screen mode
+* Use pinch & zoom to zoom in and out in a full screen mode
 * No dependencies besides Flutter
-* Callbacks for `onPageChanged` and `onViewerDismissed`
 
 ## Usage
 
-As ease as an image widget:
+As easy as an image widget:
 
 ```dart
 SizedBox(
@@ -28,10 +28,10 @@ SizedBox(
 ```
 
 TODO:
-- Upon request: Possibility to wrap icons with path to big images. According current UI there is no
+* Upon request: Possibility to wrap icons with path to big images. According current UI there is no
 need in in such functionality. But in long lists it will lead to significant UI slow.
 So, if you need this functionality feel free to create an issue.
-- Improve animations
+* Improve animations
 
 For any bugs, suggestions - please submit an issue.
 
