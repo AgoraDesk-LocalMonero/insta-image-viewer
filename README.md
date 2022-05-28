@@ -2,7 +2,7 @@
 
 A simple widget to display image in a full-screen, swipe it to dismiss, pinch & zoom.
 
-![InstaImageViewer Demo](https://github.com/example_images/insta-mage-viewer-example.gif?raw=true "InstaImageViewer Demo")
+![InstaImageViewer Demo](https://github.com/AgoraDesk-LocalMonero/insta-image-viewer/blob/main/example/example_images/insta-mage-viewer-example.gif?raw=true "InstaImageViewer Demo")
 
 ## Features
 
