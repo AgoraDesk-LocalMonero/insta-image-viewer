@@ -6,7 +6,7 @@ A simple widget to display image in a full-screen, swipe it to dismiss, pinch & 
 
 ## Features
 
-* Show a single image or a swipeable list of images
+* Show a single image in a full screen mode
 * Use pinch & zoom to zoom in and out of images
 * No dependencies besides Flutter
 * Callbacks for `onPageChanged` and `onViewerDismissed`
