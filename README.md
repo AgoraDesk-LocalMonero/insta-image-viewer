@@ -37,5 +37,6 @@ For any bugs, suggestions - please submit an issue.
 
 ## Credits
 
-InstaImageViewer is a project by [Agoradesk](https://agoradesk.com/), P2P cryptocurrency trading platform.
+InstaImageViewer is a project by [Agoradesk](https://github.com/AgoraDesk-LocalMonero/agoradesk-app-foss),
+P2P cryptocurrency trading platform.
 Created by the team behind LocalMonero, the biggest and most trusted Monero P2P trading platform.

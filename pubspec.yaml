@@ -1,6 +1,6 @@
 name: insta_image_viewer
 description: A simple widget for full screen with swipe to dismiss, pinch & zoom.
-version: 0.0.1+3
+version: 1.0.2
 homepage: https://github.com/AgoraDesk-LocalMonero/insta-image-viewer
 
 environment:
