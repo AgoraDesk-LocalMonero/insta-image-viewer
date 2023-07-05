@@ -54,11 +54,11 @@ class InstaImageViewer extends StatelessWidget {
                   pageBuilder: (BuildContext context, _, __) {
                     return FullScreenViewer(
                       tag: tag,
-                      child: child,
                       backgroundColor: backgroundColor,
                       backgroundIsTransparent: backgroundIsTransparent,
                       disposeLevel: disposeLevel,
                       disableSwipeToDismiss: disableSwipeToDismiss,
+                      child: child,
                     );
                   }));
         },
@@ -89,10 +89,10 @@ class FullScreenViewer extends StatefulWidget {
   final bool disableSwipeToDismiss;
 
   @override
-  _FullScreenViewerState createState() => _FullScreenViewerState();
+  FullScreenViewerState createState() => FullScreenViewerState();
 }
 
-class _FullScreenViewerState extends State<FullScreenViewer> {
+class FullScreenViewerState extends State<FullScreenViewer> {
   double? _initialPositionY = 0;
 
   double? _currentPositionY = 0;
@@ -272,8 +272,7 @@ class KeymotionGestureDetector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RawGestureDetector(child: child, gestures: <Type,
-        GestureRecognizerFactory>{
+    return RawGestureDetector(gestures: <Type, GestureRecognizerFactory>{
       VerticalDragGestureRecognizer:
           GestureRecognizerFactoryWithHandlers<VerticalDragGestureRecognizer>(
         () => VerticalDragGestureRecognizer()
@@ -286,6 +285,6 @@ class KeymotionGestureDetector extends StatelessWidget {
       //   () => DoubleTapGestureRecognizer()..onDoubleTap = onDoubleTap,
       //   (instance) {},
       // )
-    });
+    }, child: child);
   }
 }
