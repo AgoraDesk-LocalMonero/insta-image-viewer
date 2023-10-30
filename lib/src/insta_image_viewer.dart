@@ -17,6 +17,7 @@ class InstaImageViewer extends StatelessWidget {
     this.backgroundIsTransparent = true,
     this.disposeLevel,
     this.disableSwipeToDismiss = false,
+    this.boundaryMargin = const EdgeInsets.all(double.infinity),
   }) : super(key: key);
 
   /// Image widget
@@ -36,6 +37,9 @@ class InstaImageViewer extends StatelessWidget {
   /// if true the swipe down\up will be disabled
   /// - it gives more predictable behaviour
   final bool disableSwipeToDismiss;
+
+  /// Margin around the image
+  final EdgeInsets boundaryMargin;
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +63,7 @@ class InstaImageViewer extends StatelessWidget {
                       backgroundIsTransparent: backgroundIsTransparent,
                       disposeLevel: disposeLevel,
                       disableSwipeToDismiss: disableSwipeToDismiss,
+                      boundaryMargin: boundaryMargin,
                     );
                   }));
         },
@@ -79,6 +84,7 @@ class FullScreenViewer extends StatefulWidget {
     this.backgroundColor = Colors.black,
     this.backgroundIsTransparent = true,
     this.disposeLevel = DisposeLevel.medium,
+    this.boundaryMargin = const EdgeInsets.all(double.infinity),
   }) : super(key: key);
 
   final Widget child;
@@ -87,6 +93,7 @@ class FullScreenViewer extends StatefulWidget {
   final DisposeLevel? disposeLevel;
   final UniqueKey tag;
   final bool disableSwipeToDismiss;
+  final EdgeInsets boundaryMargin;
 
   @override
   _FullScreenViewerState createState() => _FullScreenViewerState();
@@ -198,7 +205,7 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
                 left: horizontalPosition,
                 right: horizontalPosition,
                 child: InteractiveViewer(
-                  boundaryMargin: const EdgeInsets.all(double.infinity),
+                  boundaryMargin:widget.boundaryMargin,
                   panEnabled: false,
                   child: widget.disableSwipeToDismiss
                       ? ClipRRect(
