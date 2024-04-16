@@ -13,6 +13,8 @@ class InstaImageViewer extends StatelessWidget {
   const InstaImageViewer({
     Key? key,
     required this.child,
+    this.imageUrl,
+    this.headers,
     this.backgroundColor = Colors.black,
     this.backgroundIsTransparent = true,
     this.disposeLevel,
@@ -22,6 +24,13 @@ class InstaImageViewer extends StatelessWidget {
   /// Image widget
   /// For example Image(image:Image.network("https://picsum.photos/id/507/1000").image,)
   final Widget child;
+
+  /// Image url
+  /// If imageUrl is not null, child will be ignored when large image is opened
+  final String? imageUrl;
+
+  /// headers
+  final Map<String, String>? headers;
 
   /// Background in the full screen mode, Colors.black by default
   final Color backgroundColor;
@@ -44,23 +53,50 @@ class InstaImageViewer extends StatelessWidget {
       tag: tag,
       child: GestureDetector(
         onTap: () {
-          Navigator.push(
+          if (imageUrl != null) {
+            Navigator.push(
               context,
               PageRouteBuilder(
-                  opaque: false,
-                  barrierColor: backgroundIsTransparent
-                      ? Colors.white.withOpacity(0)
-                      : backgroundColor,
-                  pageBuilder: (BuildContext context, _, __) {
-                    return FullScreenViewer(
-                      tag: tag,
-                      child: child,
-                      backgroundColor: backgroundColor,
-                      backgroundIsTransparent: backgroundIsTransparent,
-                      disposeLevel: disposeLevel,
-                      disableSwipeToDismiss: disableSwipeToDismiss,
-                    );
-                  }));
+                opaque: false,
+                barrierColor: backgroundIsTransparent
+                    ? Colors.white.withOpacity(0)
+                    : backgroundColor,
+                pageBuilder: (BuildContext context, _, __) {
+                  return FullScreenViewer(
+                    tag: tag,
+                    child: Image.network(
+                      imageUrl!,
+                      headers: headers,
+                    ),
+                    backgroundColor: backgroundColor,
+                    backgroundIsTransparent: backgroundIsTransparent,
+                    disposeLevel: disposeLevel,
+                    disableSwipeToDismiss: disableSwipeToDismiss,
+                  );
+                },
+              ),
+            );
+          } else {
+            Navigator.push(
+              context,
+              PageRouteBuilder(
+                opaque: false,
+                barrierColor: backgroundIsTransparent
+                    ? Colors.white.withOpacity(0)
+                    : backgroundColor,
+                pageBuilder: (BuildContext context, _, __) {
+                  return FullScreenViewer(
+                    tag: tag,
+                    child: child,
+                    backgroundColor: backgroundColor,
+                    backgroundIsTransparent: backgroundIsTransparent,
+                    disposeLevel: disposeLevel,
+                    disableSwipeToDismiss: disableSwipeToDismiss,
+                  );
+                },
+              ),
+            );
+          }
         },
         child: child,
       ),

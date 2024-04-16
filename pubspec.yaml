@@ -1,10 +1,10 @@
 name: insta_image_viewer
 description: A simple widget for full screen with swipe to dismiss, pinch & zoom.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/AgoraDesk-LocalMonero/insta-image-viewer
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
