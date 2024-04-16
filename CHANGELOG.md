@@ -1,3 +1,7 @@
+## 1.0.4
+
+* Add a loading indicator.
+
 ## 1.0.3
 
 * Added two properties for opening full-quality images. With this feature, it is possible to display small images in the list view and open full-quality images on user tap. If `imageUrl` is null, the plugin works as before.
