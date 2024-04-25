@@ -288,7 +288,7 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
                       ),
                       child: const Center(
                         child: Icon(
-                          CupertinoIcons.clear,
+                          Platform.isIOS ? CupertinoIcons.clear : Icons.clear,
                           color: Colors.grey,
                         ),
                       ),
